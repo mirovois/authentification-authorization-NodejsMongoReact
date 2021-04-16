@@ -15,9 +15,9 @@ app.use(cors());
 // })
 // set up mongoose
 
-const MONGODB_CONNECTION_STRING = 'mongodb+srv://miro:miro123@cluster0.ldxdq.mongodb.net/auth?retryWrites=true&w=majority'
+
 mongoose.connect(
-    MONGODB_CONNECTION_STRING,
+    process.env.MONGODB_CONNECTION_STRING,
     {
       useNewUrlParser: true,
       useUnifiedTopology: true,
