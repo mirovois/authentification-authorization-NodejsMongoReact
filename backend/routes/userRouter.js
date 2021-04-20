@@ -6,7 +6,7 @@ const protect = require('../middleware/auth')
 
 const User =require('../models/userModel')
 
-router.post('/register', async (req, res) =>{
+router.post('/', async (req, res) =>{
     try{
         let { email, password, displayName } = req.body;
 
