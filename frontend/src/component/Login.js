@@ -1,7 +1,7 @@
 import React, {useState, useContext, useReducer} from 'react'
 import {useHistory, Link} from 'react-router-dom'
 import {Card,Form, Button, Container, Row, Col, Alert} from "react-bootstrap";
-import {userContext} from '../context/context'
+import {UserContext} from '../context/context'
 import axios from 'axios';
 import {BsArrowRepeat} from 'react-icons/bs'
 import Error from '../component/Error'
@@ -14,8 +14,8 @@ const Login = () => {
   const [loading, setLoading] = useState(false)
 
   const history = useHistory()
-  // const {dispatch} = useReducer()
-  const {state,dispatch} = useContext(userContext);
+  
+  const {state,dispatch} = useContext(UserContext);
   const {user} = state
   const validateInput =() =>{
       return email.length>0 && password.length>0
@@ -56,7 +56,7 @@ const Login = () => {
       <Col xs={8} md={5} >
         <Card>
           <Card.Body className='mb-4'>
-            <h2 className='text-center my-4'>LOGIN</h2>
+            <h2 className='text-center my-4'>Login</h2>
             {error && <Alert variant='danger'>{error}</Alert>}
             <Form onSubmit={handleSubmit}>
               <Form.Group size="lg" controlId="email">

@@ -6,6 +6,7 @@ import Header from './component/Header'
 import { Container } from 'react-bootstrap';
 import Register from './component/Register';
 import { UserProfile } from './component/UserProfile';
+import PrivateRoute from './component/PrivateRoute'
 
 
 // import Register from './component/Register'
@@ -16,9 +17,9 @@ function App() {
       <Container>
         <Header />
         <Switch>
-        <Route  exact path='/login' component={Login}/>
+        <PrivateRoute  exact path='/' component={UserProfile}/>
         <Route path='/register' component={Register}/>
-        <Route path='/' component={UserProfile}/>
+        <Route path='/login' component={Login}/>
         </Switch>
       </Container>
     </Router>

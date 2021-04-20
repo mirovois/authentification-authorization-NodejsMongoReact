@@ -1,7 +1,7 @@
 import React, {useState, useContext, useReducer} from 'react'
 import {useHistory, Link} from 'react-router-dom'
 import {Card,Form, Button, Container, Row, Col, Alert} from "react-bootstrap";
-import {userContext} from '../context/context'
+import {UserContext} from '../context/context'
 import axios from 'axios';
 import {BsArrowRepeat} from 'react-icons/bs'
 
@@ -14,7 +14,7 @@ const Register = () => {
   const [loading, setLoading] = useState(false)
 
   const history = useHistory()
-  const {state,dispatch} = useContext(userContext);
+  const {state,dispatch} = useContext(UserContext);
   const {user} = state
 
   const validateInput =() =>{

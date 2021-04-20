@@ -1,9 +1,11 @@
 import React, {createContext, useReducer} from 'react'
 import userLoginReducers from '../context/reducers'
 
-export const userContext = createContext()
-    const userLocalStorage =localStorage.getItem('user') ? JSON.parse(localStorage.getItem('user')) : {}
-const initialState = {
+export const UserContext = createContext()
+
+    const userLocalStorage =localStorage.getItem('user') ? JSON.parse(localStorage.getItem('user')) : null
+    
+    const initialState = {
     user: userLocalStorage,
 }
 
@@ -15,9 +17,9 @@ const UserProvider = ({children}) => {
     const [state, dispatch] = useReducer(reducers, initialState)
 
     return (
-        <userContext.Provider value={{state,dispatch}}>
+        <UserContext.Provider value={{state,dispatch}}>
             {children}
-        </userContext.Provider>
+        </UserContext.Provider>
     )
 }
 

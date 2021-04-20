@@ -1,11 +1,11 @@
 import React, {useContext} from 'react'
 import {useHistory} from 'react-router-dom'
-import {userContext} from '../context/context'
+import {UserContext} from '../context/context'
 import {Navbar, Nav} from "react-bootstrap";
 import {Link, NavLink} from 'react-router-dom'
 
 const Header = () => {
-    const{state,dispatch} = useContext(userContext)
+    const{state,dispatch} = useContext(UserContext)
     const{user} = state
 
     const history = useHistory()
@@ -30,8 +30,8 @@ const Header = () => {
               </>
             ) : (
               <>
-              <NavLink to='/login' exact={true} activeClassName='is-active' activeStyle={{ color: 'teal' }} className='mx-4'>Login</NavLink>
-              <NavLink to='/register' activeClassName='is-active' activeStyle={{ color: 'teal' }} className='mx-4'>Register</NavLink>
+              <NavLink to='/login' exact={true} style={{fontSize:'1.4rem', textDecoration:'none'}} activeStyle={{ color: 'teal', fontWeight:"bold", fontSize:'1.4rem', textDecoration:'none' }} className='mx-4'>Login</NavLink>
+              <NavLink to='/register' style={{fontSize:'1.4rem', textDecoration:'none'}} activeStyle={{ color: 'teal', fontWeight:"bold",fontSize:'1.4rem',textDecoration:'none'  }} className='mx-4'>Register</NavLink>
               </>
             )}
           </Nav>

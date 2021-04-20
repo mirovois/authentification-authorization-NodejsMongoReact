@@ -25,3 +25,13 @@
 .hide {
   display: none;
 }
+
+.nav-link {
+  color: teal;
+  font-weight: bold;
+  font-size: 1.3rem;
+  text-decoration: none;
+}
+.nav-link:active {
+  color: teal;
+}
