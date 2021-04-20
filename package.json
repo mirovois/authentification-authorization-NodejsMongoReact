@@ -5,7 +5,8 @@
   "main": "sever.js",
   "scripts": {
     "start": "node backend/server",
-    "server": "nodemon backend/server"
+    "server": "nodemon backend/server",
+    "heroku-postbuild": "NPM_CONFIG_PRODUCTION=false npm install --prefix fronend && npm run build --prefix frontend"
   },
   "author": "Myroslav Voysovych",
   "license": "ISC",
